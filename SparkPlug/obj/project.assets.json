@@ -75,6 +75,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "SparkPlug.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/SparkPlug.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SparkPlug.Data.dll": {}
+        }
       }
     }
   },
@@ -185,10 +195,16 @@
         "swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "SparkPlug.Data/1.0.0": {
+      "type": "project",
+      "path": "../SparkPlug.Data/SparkPlug.Data.csproj",
+      "msbuildProject": "../SparkPlug.Data/SparkPlug.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "SparkPlug.Data >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -219,7 +235,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Dell\\source\\repos\\SparkPlug\\SparkPlug.Data\\SparkPlug.Data.csproj": {
+              "projectPath": "C:\\Users\\Dell\\source\\repos\\SparkPlug\\SparkPlug.Data\\SparkPlug.Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
