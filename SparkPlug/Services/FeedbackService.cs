@@ -1,4 +1,5 @@
-﻿using SparkPlugDao.IRepository;
+﻿using SparkPlug.Services.Interface;
+using SparkPlugDao.IRepository;
 using SparkPlugDao.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SparkPlug.Services
 {
-    public class FeedbackService
+    public class FeedbackService : IFeedbackService
     {
         private readonly IFeedbackRepo _repo;
 

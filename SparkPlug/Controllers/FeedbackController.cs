@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SparkPlug.Services;
+using SparkPlug.Services.Interface;
+using SparkPlugDao.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,16 +14,16 @@ namespace SparkPlug.Controllers
     [ApiController]
     public class FeedbackController : ControllerBase
     {
-        private readonly FeedbackService _service;
+        private readonly IFeedbackService _service;
 
-        public FeedbackController(FeedbackService _service )
+        public FeedbackController(IFeedbackService service )
         {
-            service = _service;
+            _service = service;
         }
         [HttpPost]
-        public IActionResult AddRecord()
+        public async Task<BaseResponse> AddRecord(sparkPlugFeedback model)
         {
-
+            return await _service.AddFeedback(model);
         }
     }
 }
