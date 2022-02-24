@@ -1,4 +1,5 @@
-﻿using SparkPlugDao.Models;
+﻿using SparkPlug.SparkPlugDao.Dto;
+using SparkPlugDao.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace SparkPlug.Services.Interface
 {
     public interface IFeedbackService
     {
-        Task<BaseResponse> AddFeedback(sparkPlugFeedback model);
+        Task<BaseResponse> AddFeedback(SparkPlugDto model);
 
     }
 }

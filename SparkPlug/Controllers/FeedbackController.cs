@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SparkPlug.Services;
 using SparkPlug.Services.Interface;
+using SparkPlug.SparkPlugDao.Dto;
 using SparkPlugDao.Models;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace SparkPlug.Controllers
             _service = service;
         }
         [HttpPost]
-        public async Task<BaseResponse> AddRecord(sparkPlugFeedback model)
+        public async Task<BaseResponse> AddRecord(SparkPlugDto model)
         {
             return await _service.AddFeedback(model);
         }

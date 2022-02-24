@@ -6,7 +6,7 @@ namespace SparkPlugDao.Models
     public class sparkPlugFeedback
     {
         [JsonProperty("_id")]
-        public string Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public string customerName { get; set; }
         public string customerEmail { get; set; }
         public string customerMessage { get; set; }

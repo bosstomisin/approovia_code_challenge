@@ -1,4 +1,5 @@
 ﻿using SparkPlug.Services.Interface;
+using SparkPlug.SparkPlugDao.Dto;
 using SparkPlugDao.IRepository;
 using SparkPlugDao.Models;
 using System;
@@ -16,9 +17,17 @@ namespace SparkPlug.Services
         {
             _repo = repo;
         }
-        public async Task<BaseResponse> AddFeedback(sparkPlugFeedback model)
+        public async Task<BaseResponse> AddFeedback(SparkPlugDto model)
         {
-           return await _repo.InsertRecord(model);
+            var newRecord = new sparkPlugFeedback()
+            {
+                customerEmail = model.customerEmail,
+                customerMessage = model.customerMessage,
+                customerName = model.customerName,
+                _formDomainName = model._formDomainName,
+                _formName = model._formName
+            };
+           return await _repo.InsertRecord(newRecord);
         }
     }
 }
