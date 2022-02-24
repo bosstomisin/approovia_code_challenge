@@ -21,6 +21,12 @@ namespace SparkPlug.Controllers
         {
             _service = service;
         }
+
+        /// <summary>
+        /// This action makes a call to FeedbackService class
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>returns a true or false response status and a successful or failed message</returns>
         [HttpPost("add-record")]
         public async Task<BaseResponse> AddRecord([FromForm] SparkPlugDto model)
         {

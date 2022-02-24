@@ -45,3 +45,4 @@ C:\Users\Dell\source\repos\SparkPlug\SparkPlug\obj\Debug\net5.0\ref\SparkPlug.dl
 C:\Users\Dell\source\repos\SparkPlug\SparkPlug\obj\Debug\net5.0\SparkPlug.pdb
 C:\Users\Dell\source\repos\SparkPlug\SparkPlug\obj\Debug\net5.0\SparkPlug.genruntimeconfig.cache
 C:\Users\Dell\source\repos\SparkPlug\SparkPlug\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\Dell\source\repos\SparkPlug\SparkPlug\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

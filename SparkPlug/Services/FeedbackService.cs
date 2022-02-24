@@ -20,19 +20,16 @@ namespace SparkPlug.Services
             _repo = repo;
             _map = map;
         }
+
+        /// <summary>
+        /// this method makes a call to feedbackRepo to add a record to the database
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>returns a true or false response status and a successful or failed message</returns>
         public async Task<BaseResponse> AddFeedback(SparkPlugDto model)
         {
-            var newRecord =_map.Map<SparkPlugFeedback>(model);
-
-            //var newRecord = new SparkPlugFeedback()
-            //{
-            //    CustomerEmail = model.customerEmail,
-            //    CustomerMessage = model.customerMessage,
-            //    CustomerName = model.customerName,
-            //    FormDomainName = model._formDomainName,
-            //    FormName = model._formName
-            //};
-           return await _repo.InsertRecord(newRecord);
+            var newRecord =_map.Map<SparkPlugFeedback>(model);// maps SparkPlugFeedback model to SparkPlugDto model
+            return await _repo.InsertRecord(newRecord);
         }
     }
 }
