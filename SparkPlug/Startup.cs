@@ -6,9 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
-using SparkPlug.Data;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,10 +27,7 @@ namespace SparkPlug
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<DatabaseSetting>(
-            Configuration.GetSection(nameof(DatabaseSetting)));
-            services.AddSingleton<DatabaseSetting>(provider =>
-                provider.GetRequiredService<IOptions<DatabaseSetting>>().Value);
+            services.AddScoped<IMongoClient, MongoClient>(sp => new MongoClient(Configuration.GetConnectionString("MongoSetting")));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
