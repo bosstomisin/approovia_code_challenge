@@ -20,12 +20,12 @@ namespace SparkPlugDao.Repository
 
             
         }
-        public async Task<BaseResponse> InsertRecord(sparkPlugFeedback model)
+        public async Task<BaseResponse> InsertRecord(SparkPlugFeedback model)
         {        
             try
             {
-                var database = _client.GetDatabase(model._formDomainName);
-                var collection = database.GetCollection<sparkPlugFeedback>(model._formName);
+                var database = _client.GetDatabase(model.FormDomainName);
+                var collection = database.GetCollection<SparkPlugFeedback>(model.FormName);
                 collection.InsertOne(model);
                 return new BaseResponse { Message = "Feedback successfully submitted", Success = true };
             }

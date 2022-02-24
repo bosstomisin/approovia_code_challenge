@@ -3,14 +3,14 @@ using System;
 
 namespace SparkPlugDao.Models
 {
-    public class sparkPlugFeedback
+    public class SparkPlugFeedback
     {
         [JsonProperty("_id")]
         public string Id { get; set; } = Guid.NewGuid().ToString();
-        public string customerName { get; set; }
-        public string customerEmail { get; set; }
-        public string customerMessage { get; set; }
-        public string _formName { get; set; }
-        public string _formDomainName { get; set; }
+        public string CustomerName { get; set; }
+        public string CustomerEmail { get; set; }
+        public string CustomerMessage { get; set; }
+        public string FormName { get; set; }
+        public string FormDomainName { get; set; }
     }
 }

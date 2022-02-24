@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "IYxrK3YLP/FlYYs+a1LzXABJNkP01ym+BtdSaiT+iKDuPzoxdj0KRZK6rd8NPQsM8yGZOpFmebRq+s/WNd4FLQ==",
+  "dgSpecHash": "prHYGgCUhbYCzRRWfTMc53C8j5Qv03zBHy066OHFRsMCYbQLLVvVRwvec+3mFZZt9dtPy0qgIN9YpzIwQJDAQA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dell\\source\\repos\\SparkPlug\\SparkPlug\\SparkPlug.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Dell\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\mongodb.bson\\2.14.0\\mongodb.bson.2.14.0.nupkg.sha512",

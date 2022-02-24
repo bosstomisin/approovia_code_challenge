@@ -1,4 +1,5 @@
-﻿using SparkPlug.Services.Interface;
+﻿using AutoMapper;
+using SparkPlug.Services.Interface;
 using SparkPlug.SparkPlugDao.Dto;
 using SparkPlugDao.IRepository;
 using SparkPlugDao.Models;
@@ -12,20 +13,23 @@ namespace SparkPlug.Services
     public class FeedbackService : IFeedbackService
     {
         private readonly IFeedbackRepo _repo;
+        //private readonly IMapper _map;
 
         public FeedbackService(IFeedbackRepo repo)
         {
             _repo = repo;
+            //_map = map;
         }
         public async Task<BaseResponse> AddFeedback(SparkPlugDto model)
         {
-            var newRecord = new sparkPlugFeedback()
+            var newRecord = new SparkPlugFeedback()
             {
-                customerEmail = model.customerEmail,
-                customerMessage = model.customerMessage,
-                customerName = model.customerName,
-                _formDomainName = model._formDomainName,
-                _formName = model._formName
+                //_map.Map<>
+                CustomerEmail = model.customerEmail,
+                CustomerMessage = model.customerMessage,
+                CustomerName = model.customerName,
+                FormDomainName = model._formDomainName,
+                FormName = model._formName
             };
            return await _repo.InsertRecord(newRecord);
         }

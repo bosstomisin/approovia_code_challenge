@@ -9,6 +9,6 @@ namespace SparkPlugDao.IRepository
 {
     public interface IFeedbackRepo
     {
-        Task<BaseResponse> InsertRecord(sparkPlugFeedback model);
+        Task<BaseResponse> InsertRecord(SparkPlugFeedback model);
     }
 }
