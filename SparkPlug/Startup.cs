@@ -31,10 +31,10 @@ namespace SparkPlug
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IMongoClient, MongoClient>(x => new MongoClient(Configuration.GetConnectionString("MongoSetting")));
+            services.AddScoped<IMongoClient, MongoClient>(x => new MongoClient(Configuration.GetSection("MongoSetting:ConnectionStrings").Value));
             services.AddScoped<IFeedbackRepo, FeedbackRepo>();
             services.AddScoped<IFeedbackService, FeedbackService>();
-            services.AddCors();
+            services.AddCors(options => options.AddDefaultPolicy(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -57,6 +57,8 @@ namespace SparkPlug
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {

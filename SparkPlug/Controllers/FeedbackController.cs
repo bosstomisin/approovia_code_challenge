@@ -21,8 +21,8 @@ namespace SparkPlug.Controllers
         {
             _service = service;
         }
-        [HttpPost]
-        public async Task<BaseResponse> AddRecord(SparkPlugDto model)
+        [HttpPost("add-record")]
+        public async Task<BaseResponse> AddRecord([FromForm] SparkPlugDto model)
         {
             return await _service.AddFeedback(model);
         }

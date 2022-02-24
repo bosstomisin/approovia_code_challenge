@@ -27,11 +27,11 @@ namespace SparkPlugDao.Repository
                 var database = _client.GetDatabase(model._formDomainName);
                 var collection = database.GetCollection<sparkPlugFeedback>(model._formName);
                 collection.InsertOne(model);
-                return new BaseResponse { Message = "Feedback successfully submitted", Status = true };
+                return new BaseResponse { Message = "Feedback successfully submitted", Success = true };
             }
             catch (Exception)
             {
-                return new BaseResponse { Message = "Feedback not submitted", Status = false };
+                return new BaseResponse { Message = "Feedback not submitted", Success = false };
             }
 
         }

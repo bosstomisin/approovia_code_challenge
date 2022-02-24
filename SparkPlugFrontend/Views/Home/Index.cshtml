@@ -1,4 +1,8 @@
-﻿<html>
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html>
 
 <head>
 
@@ -11,7 +15,7 @@
     <meta http-equiv="Content-Security-Policy"
           content="
           script-src 'self' 'unsafe-inline';
-          connect-src 'self' https://localhost:44321
+          connect-src 'self' https://localhost:44321/api/Feedback/add-record
           ">
 
     <title>Spark Plug - Customer Form</title>
@@ -66,6 +70,7 @@
 
             var localDomainName = window.location.hostname; // the current domain name of the form
 
+
             if (!localDomainName) {
 
                 mySPFormDomainName.setAttribute("value", "localhost"); // set the form domain name as 'localhost' by default
@@ -73,7 +78,6 @@
             } else {
 
                 mySPFormDomainName.setAttribute("value", localDomainName); // set the form domain name where available
-
             }
 
             var mySPFormName = document.getElementById("_formName"); // A hidden field to carry the form name
@@ -111,7 +115,7 @@
 
                 var formdata = new FormData(mySparkPlugFeedback); // get data from the form
 
-                var endpoint = 'https://localhost:44392/feedback/AddRecord/'; //change this to a valid endpoint;
+                var endpoint = 'https://localhost:44321/api/Feedback/add-record' //change this to a valid endpoint;
 
                 fetch(endpoint, {
                     method: 'post',
@@ -124,6 +128,7 @@
                     .then(function (data) {
 
                         // get the status report through 'data' variable formatted as JSON
+
 
                         if (data.success) {
 
