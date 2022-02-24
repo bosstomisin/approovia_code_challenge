@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MongoDB.Driver;
+using SparkPlug.MappingProfile;
 using SparkPlug.Services;
 using SparkPlug.Services.Interface;
 using SparkPlugDao.IRepository;
@@ -35,6 +36,7 @@ namespace SparkPlug
             services.AddScoped<IFeedbackRepo, FeedbackRepo>();
             services.AddScoped<IFeedbackService, FeedbackService>();
             services.AddCors(options => options.AddDefaultPolicy(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()));
+            services.AddAutoMapper(typeof(MapperProfile));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

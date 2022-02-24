@@ -13,24 +13,25 @@ namespace SparkPlug.Services
     public class FeedbackService : IFeedbackService
     {
         private readonly IFeedbackRepo _repo;
-        //private readonly IMapper _map;
+        private readonly IMapper _map;
 
-        public FeedbackService(IFeedbackRepo repo)
+        public FeedbackService(IFeedbackRepo repo, IMapper map)
         {
             _repo = repo;
-            //_map = map;
+            _map = map;
         }
         public async Task<BaseResponse> AddFeedback(SparkPlugDto model)
         {
-            var newRecord = new SparkPlugFeedback()
-            {
-                //_map.Map<>
-                CustomerEmail = model.customerEmail,
-                CustomerMessage = model.customerMessage,
-                CustomerName = model.customerName,
-                FormDomainName = model._formDomainName,
-                FormName = model._formName
-            };
+            var newRecord =_map.Map<SparkPlugFeedback>(model);
+
+            //var newRecord = new SparkPlugFeedback()
+            //{
+            //    CustomerEmail = model.customerEmail,
+            //    CustomerMessage = model.customerMessage,
+            //    CustomerName = model.customerName,
+            //    FormDomainName = model._formDomainName,
+            //    FormName = model._formName
+            //};
            return await _repo.InsertRecord(newRecord);
         }
     }
